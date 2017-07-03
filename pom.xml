@@ -56,6 +56,21 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Dependency for Bootstrap -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>4.0.0-alpha.6-1</version>
+		</dependency>
+
+		<!-- Library needed to enable LEGACYHTML5 mode in Thymeleaf allowing to omit closing tags in HTML5 code -->
+		<dependency>
+			<groupId>nekohtml</groupId>
+			<artifactId>nekohtml</artifactId>
+			<version>1.9.6.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
