@@ -1,19 +1,25 @@
-var path = require('path');
+const path = require('path');
+
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const extractCSS = new ExtractTextPlugin("../css/bundle.css");
+const WriteFilePlugin = require('write-file-webpack-plugin');
 
 module.exports = {
   entry: './frontend/js/app.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'src/main/resources/static/asserts')
+    path: path.resolve(__dirname, 'src/main/resources/public/js'),
+    publicPath: '/'
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        use: extractCSS.extract({
+            fallback: "style-loader",
+            use: "css-loader"
+        })
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -40,5 +46,13 @@ module.exports = {
          ]
        }
     ]
-  }
+  },
+  plugins: [
+      extractCSS,
+      new CopyWebpackPlugin([{
+          from: path.resolve(__dirname, 'frontend/html'),
+          to: path.resolve(__dirname, 'src/main/resources/templates')
+      }]),
+      new WriteFilePlugin()
+  ]
 };
