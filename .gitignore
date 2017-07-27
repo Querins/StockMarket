@@ -25,3 +25,7 @@ nbdist/
 
 # Exclude node modules
 node_modules/
+
+# These paths are generated automatically by webpack
+src/main/resources/public
+src/main/resources/templates
