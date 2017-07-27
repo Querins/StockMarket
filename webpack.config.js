@@ -15,6 +15,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules)/,
+        loader: "babel-loader",
+        options: {
+          presets: ["env"]
+        }
+      },
+      {
         test: /\.css$/,
         use: extractCSS.extract({
             fallback: "style-loader",
