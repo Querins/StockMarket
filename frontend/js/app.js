@@ -1,2 +1,12 @@
-const bootstrap = require('bootstrap/dist/css/bootstrap.min.css');
-const my = require('../css/style.css');
+const my = require('../scss/style.scss');
+import Vue from 'vue';
+import ex from '../components/example.vue';
+
+let app = new Vue({
+
+  el: '#app',
+  components: {
+    'example': ex
+  }
+
+});

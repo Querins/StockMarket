@@ -27,5 +27,6 @@ nbdist/
 node_modules/
 
 # These paths are generated automatically by webpack
+frontend/dist
 src/main/resources/public
 src/main/resources/templates
