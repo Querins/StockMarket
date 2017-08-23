@@ -1,12 +1,17 @@
-const my = require('../scss/style.scss');
-import Vue from 'vue';
-import ex from '../components/example.vue';
+import '../scss/style.scss'; // Ensure you are using css-loader
+
+import Vue from 'vue'
+import Vuetify from 'vuetify'
+
+Vue.use(Vuetify);
+
+import mainComponent from '../components/App.vue';
 
 let app = new Vue({
 
   el: '#app',
   components: {
-    'example': ex
+    'app': mainComponent
   }
 
 });
