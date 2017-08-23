@@ -1,0 +1,6 @@
+{
+  "presets": [
+    [ "env", { "uglify": true } ],
+  ],
+  "plugins": ["transform-runtime"]
+}

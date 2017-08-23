@@ -10,67 +10,11 @@
 
 <body>
 
-
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-4 col-lg-3 col-xl-2">
-
-        <div class="list-group stock-list hidden-xs-down">
-
-          <a href="#" class="list-group-item list-group-item-action flex-column">
-            <div class="d-flex justify-content-between align-items-center w-100">
-              <h5 class="mb-0">Google</h5>
-              <small>989.36</small>
-            </div>
-          </a>
-
-          <a href="#" class="list-group-item list-group-item-action flex-column">
-            <div class="d-flex justify-content-between align-items-center w-100">
-              <h5 class="mb-0">Apple</h5>
-              <small>365.21</small>
-            </div>
-          </a>
-
-        </div>
-
-      </div>
-      <div class="col-sm-8 col-lg-9 col-xl-10">
-
-        <canvas id="canvas" height="300"></canvas>
-
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Label</th>
-              <th>Volume</th>
-              <th>Open</th>
-              <th>Close</th>
-            </tr>
-          </thead>
-          <tr>
-            <td>745895</td>
-            <td>Google</td>
-            <td>0.02</td>
-            <td>785.36</td>
-            <td>0.00</td>
-          </tr>
-          <tr>
-            <td>3242345</td>
-            <td>Apple</td>
-            <td>0.08</td>
-            <td>877.15</td>
-            <td>899.05</td>
-          </tr>
-        </table>
-
-      </div>
-    </div>
+  <div id="app">
+    <app></app>
   </div>
 
   <script src="../dist/bundle.js" th:src="@{/bundle.js}" type="text/javascript"></script>
-
 
 </body>
 
