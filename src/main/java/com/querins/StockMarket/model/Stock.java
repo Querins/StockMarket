@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 public class Stock {
 
     @Id
+    @GeneratedValue
     private long id;
 
     @Column(unique=true, name="TITLE")
