@@ -28,6 +28,12 @@ public class StockService {
         this.repository = repository;
         this.template = template;
 
+        if( this.repository.count() == 0 ) {
+
+            this.repository.save(new Stock("Google", 2));
+
+        }
+
     }
 
     @Scheduled(fixedDelay = 1000)
