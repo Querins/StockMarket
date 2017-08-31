@@ -8,7 +8,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const serverPaths = {
   templates: 'src/main/resources/templates',
   resources: 'src/main/resources/public'
-}
+};
 
 module.exports = {
   entry: './frontend/js/app.js',
@@ -71,6 +71,22 @@ module.exports = {
   },
   devtool: '#eval-source-map',
   plugins: []
+};
+
+if(process.env.NODE_ENV === 'development') {
+  module.exports.devtool = '#source-map';
+  module.exports.plugins = (module.exports.plugins || []).concat([
+      new CleanWebpackPlugin([serverPaths.templates, serverPaths.resources]),
+      new CopyWebpackPlugin([
+          {
+              from: path.resolve(__dirname, 'frontend/html'),
+              to: path.resolve(__dirname, serverPaths.templates)
+          }, {
+              from: path.resolve(__dirname, 'frontend/dist'),
+              to: path.resolve(__dirname, serverPaths.resources)
+          }
+      ])
+  ])
 }
 
 if (process.env.NODE_ENV === 'production') {
