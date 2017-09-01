@@ -4,8 +4,9 @@
   "description": "Stock market generator, combining stock engine and user interface",
   "main": "webpack.config.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=production webpack --watch --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "dev": "cross-env NODE_ENV=development webpack --watch --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "front": "webpack-dev-server --inline --hot --hide-modules"
   },
   "repository": {
     "type": "git",
