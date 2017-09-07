@@ -28,4 +28,12 @@ public class Stock {
 
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public long getId() {
+        return id;
+    }
+
 }

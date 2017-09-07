@@ -21,7 +21,7 @@ public class Quote {
     @Column(name = "date_time", nullable = false, updatable = false)
     private Date date;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Stock.class)
     @JoinColumn(name="stock_id")
     private Stock stock;
 
